@@ -20,7 +20,7 @@ def GetChangeString() {
 }
 
 def DingdingReq(RobotID, Status) {
-    wrap([$class: 'BuildUser']) {
+   // wrap([$class: 'BuildUser']) {
         def changeString = GetChangeString()
         dingtalk (
             robot: RobotID,
@@ -31,15 +31,15 @@ def DingdingReq(RobotID, Status) {
                 "> - 应用名称：**${env.JOB_NAME}**",
                 "> - 构建结果：**${Status}**",
                 "> - 当前版本：**${env.BUILD_NUMBER}**",
-                "> - 构建发起：**${env.BUILD_USER}**",
+                "> - 构建发起人：**${env.BUILD_USER}**",
                 "> - 持续时间：**${currentBuild.durationString}**",
                 "> - 构建日志：[点击查看详情](${env.BUILD_URL}console)",
                 "### 更新记录:",
                 "${changeString}"
             ],
             at: [
-                "马一凡 13119327914"
+                "马一凡 13119347914"
             ]
         )
-    }
+  //  }
 }
