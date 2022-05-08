@@ -1,4 +1,4 @@
-package org.devops
+package vars
 
 def GetChangeString() {
     MAX_MSG_LEN = 100
